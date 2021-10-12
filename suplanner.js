@@ -54,6 +54,7 @@ function populateGrid(classList)
         const div2a = document.createElement('a');
         if (classList[c]["isOnline"]) {
             setAttributes(div2a, {"target":"_blank","href":classList[c]["link"]})
+            
         }
         console.log(newclass[0].childNodes[1])
         console.log(div2a)
@@ -79,7 +80,10 @@ function constructClassListFromStorage()
 }
 
 createGrid()
+console.log("created grid")
 temp_list = constructClassListFromStorage()
+console.log("created class list")
 populateGrid(temp_list)
+console.log("populated grid")
 
 
