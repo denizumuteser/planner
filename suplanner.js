@@ -43,7 +43,6 @@ function createGrid()
 
 function populateGrid(classList)
 {
-    console.log("starting to populate", classList)
     for (let c = 0; c < classList.length; c++) {
         
         let newclass = document.getElementsByClassName(classList[c]["weekday"]+" "+classList[c]["timeslot"])
@@ -67,11 +66,17 @@ function getFromStorage(name)
 
 function constructClassListFromStorage()
 {
-    let temp_list = [];
-    for (let i = 0; i < localStorage.length; i++) {
-        temp_list.push(getFromStorage(localStorage.key(i)));
-    }
-    return temp_list;
+    return getFromStorage("stored_classes")
+}
+
+function addToStorage(name, myobj)
+{
+    localStorage.setItem(name, JSON.stringify(myobj))
+}
+
+
+if (!(localStorage.getItem("stored_classes"))) {
+    addToStorage("stored_classes", [])
 }
 
 createGrid()
