@@ -52,16 +52,16 @@ function populateGrid(classList)
         title.textContent = classList[c]["title"]
         //zoom link
         const div2a = document.createElement('a');
+        div2a.textContent = classList[c]["location"]
         if (classList[c]["isOnline"]) {
+            console.log("entered if")
             setAttributes(div2a, {"target":"_blank","href":classList[c]["link"]})
+            console.log("setted arttribute")
             
         }
         console.log(newclass[0].childNodes[1])
         console.log(div2a)
         newclass[0].childNodes[1].appendChild(div2a);
-        //location
-        let location = newclass[0].childNodes[1].childNodes[0]
-        location.textContent = classList[c]["location"]
     }    
 }
 
