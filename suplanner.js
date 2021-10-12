@@ -54,6 +54,8 @@ function populateGrid(classList)
         if (classList[c]["isOnline"]) {
             setAttributes(div2a, {"target":"_blank","href":classList[c]["link"]})
         }
+        console.log(newclass[0].childNodes[1])
+        console.log(div2a)
         newclass[0].childNodes[1].appendChild(div2a);
         //location
         let location = newclass[0].childNodes[1].childNodes[0]
