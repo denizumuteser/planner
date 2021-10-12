@@ -21,7 +21,7 @@ addform.onsubmit = () => {
     let ftime = document.getElementById('ftime').value;
     let flink = document.getElementById('flink').value;
     
-    let new_class = {"weekday":fday,"timeslot":ftime,"title":ftitle,"location":flocation,"link":flink}
+    let new_class = {"weekday":fday,"timeslot":ftime,"title":ftitle,"isOnline":true,"location":flocation,"link":flink}
     console.log(new_class)
     addToStorage(new_class['title'], new_class)
     return false;
